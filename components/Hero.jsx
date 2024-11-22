@@ -4,10 +4,10 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-1 md:mt-10 md:grid-cols-2">
+    <div className="grid grid-cols-1 md:mt-10 md:grid-cols-2 p-4 mx-auto sm:px-10 md:px-20">
       <div className="flex flex-col justify-center md:gap-10">
         <h2 className="text-[40px] md:text-[60px] font-bold">
-          NIC Lakeside Adventure
+          NIC Adventure
           <br /> Center
         </h2>
         <h3 className="text-[20px] text-gray-500 pr-20 mt-5">
@@ -27,6 +27,7 @@ const Hero = () => {
           height={400}
           width={500}
           className="object-cover w-full align-middle"
+          priority
         />
       </div>
     </div>

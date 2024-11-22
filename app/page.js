@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [equipList, setEquipList] = useState([]);
+  const [equipOrigList, setEquipOrigList] = useState([]);
 
   useEffect(() => {
     getEquipment();
@@ -16,15 +17,24 @@ export default function Home() {
 
   const getEquipment = async () => {
     const result = await getEquipmentList();
-    console.log("RESULT:", result);
     setEquipList(result?.equipmentLists);
+    setEquipOrigList(result?.equipmentLists);
+  };
+
+  const filterEquipList = (season) => {
+    const filterList = equipOrigList.filter((item) => item.season == season);
+
+    setEquipList(filterList);
   };
 
   return (
-    <main className="p-4 mx-auto sm:px-10 md:px-20">
+    <main className="">
       <Hero />
       <SearchInput />
-      <EquipmentFiltersOptions />
+      <EquipmentFiltersOptions
+        eList={equipOrigList}
+        setSeason={(value) => console.log(value)}
+      />
       <EList eList={equipList} />
     </main>
   );
