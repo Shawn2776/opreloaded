@@ -5,6 +5,7 @@ import {
   ClerkProvider,
   SignIn,
   SignInButton,
+  SignInWithMetamaskButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -34,8 +35,15 @@ export default function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <Navbar />
-          {children}
+          <SignedIn>
+            <Navbar />
+            {children}
+          </SignedIn>
+          <SignedOut>
+            <div className="w-full min-h-dvh flex justify-center items-center">
+              <SignInButton />
+            </div>
+          </SignedOut>
         </body>
       </html>
     </ClerkProvider>
