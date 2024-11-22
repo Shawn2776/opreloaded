@@ -34,15 +34,8 @@ export default function RootLayout({ children }) {
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <SignedIn>
-            <Navbar />
-            {children}
-          </SignedIn>
-          <SignedOut>
-            <div className="w-full min-h-dvh flex justify-center items-center">
-              <SignInButton />
-            </div>
-          </SignedOut>
+          <Navbar />
+          {children}
         </body>
       </html>
     </ClerkProvider>
