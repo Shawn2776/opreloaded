@@ -7,14 +7,15 @@ const Hero = () => {
     <div className="grid grid-cols-1 md:mt-10 md:grid-cols-2">
       <div className="flex flex-col justify-center md:gap-10">
         <h2 className="text-[40px] md:text-[60px] font-bold">
-          NIC Adventure Center
+          NIC Lakeside Adventure
+          <br /> Center
         </h2>
         <h3 className="text-[20px] text-gray-500 pr-20 mt-5">
           We offer convenient rentals and activities like kayaking,
           paddleboarding, and sailing.
         </h3>
         <div className="px-4 pt-2 pb-4 mt-5">
-          <button>
+          <button className="btn">
             <span className="text-xl">Explore Rentals</span>
           </button>
         </div>
